@@ -1,0 +1,24 @@
+---
+
+- hosts: localhost
+
+ 
+  tasks: 
+
+  - name: Create a new Azure provider in ManageIQ
+    manageiq_provider:
+      name: 'Azure Provider'
+      type: 'Azure'
+      provider_region: 'westeurope'
+      subscription: '59d460b9-da91-449c-9c53-0f01f82b5e2f'
+      azure_tenant_id: '52707392-fe79-46d6-ae10-cd8e506f41f9'
+      state: 'present'
+      provider:
+        hostname: 'azure.mqProvider.com'
+        userid: '11fb842c-4811-45b7-92ef-78f4cd0d09ff'
+        password: 'TjNi53pnDp4C5fMl7lHkAl4wtzS/tlc1GOpdgfMGn6c='
+      manageiq_connection:
+        url: 'https://52.174.195.73:8443/'
+        username: 'admin'
+        password: 'smartvm'
+        verify_ssl: false
